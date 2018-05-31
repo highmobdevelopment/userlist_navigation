@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="req_gray">#CFD8DC</color>
+    <color name="req_widg_location_text">#8d8d8d</color>
+    <color name="req_widg_button_color">#ffffff</color>
+    <color name="black_50">#77000000</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ffff0000</color>
+    <color name="blue">#4d94ff</color>
+    <color name="gray"> #b3b3b3</color>
+    <color name="black_transparent">#77000000</color>
+    <color name="request_gray">#424242</color>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+</resources>

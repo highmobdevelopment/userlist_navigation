@@ -1,0 +1,7 @@
+<resources>
+    <string name="test_text">Test Text</string>
+    <string name="menu_field_email">email</string>
+    <string name="menu_field_address">address</string>
+    <string name="menu_field_home_phone">home phone</string>
+    <string name="menu_field_mobile_phone">mobile phone</string>
+</resources>
