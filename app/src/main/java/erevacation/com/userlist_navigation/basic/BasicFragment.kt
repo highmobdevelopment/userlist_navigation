@@ -41,6 +41,7 @@ abstract class BasicFragment <P : ViperContract.Presenter, B: ViewDataBinding> :
         } else {
             presenter = pres
         }
+        presenter?.viewAttach(this)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

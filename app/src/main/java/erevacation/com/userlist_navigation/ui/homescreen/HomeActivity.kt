@@ -10,14 +10,4 @@ class HomeActivity : BasicActivity<HomeContract.HomePresenter, ActivityHomeBindi
 
     override fun getLayoutId(): Int = R.layout.activity_home
 
-    override fun onStart() {
-        super.onStart()
-
-    }
-
-    override fun onBackPressed() {
-     super.onBackPressed()
-
-    }
-
 }
