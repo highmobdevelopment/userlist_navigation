@@ -3,6 +3,7 @@ package erevacation.com.userlist_navigation.ui.homescreen.profile
 import erevacation.com.userlist_navigation.R
 import erevacation.com.userlist_navigation.basic.BasicFragment
 import erevacation.com.userlist_navigation.databinding.FragmentProfileBinding
+import erevacation.com.userlist_navigation.ui.homescreen.list.ListFragmentPresenter
 
 class ProfileFragment : BasicFragment<ProfileContract.ProfilePresenter, FragmentProfileBinding>()
         , ProfileContract.ProfileView {
@@ -15,16 +16,9 @@ class ProfileFragment : BasicFragment<ProfileContract.ProfilePresenter, Fragment
 
     override fun onStart() {
         super.onStart()
-        name = arguments?.getString(NAME)
-        surname = arguments?.getString(SURNAME)
-        imageUrl = arguments?.getString(IMAGEURL)
-        profileListInfo = arguments?.getStringArrayList(PROFILEINFOLIST)
-    }
-
-    companion object {
-        val NAME = "name"
-        val SURNAME = "surname"
-        val IMAGEURL = "image"
-        val PROFILEINFOLIST = "profile_info_list"
+        name = arguments?.getString(ListFragmentPresenter.NAME)
+        surname = arguments?.getString(ListFragmentPresenter.SURNAME)
+        imageUrl = arguments?.getString(ListFragmentPresenter.IMAGEURL)
+        profileListInfo = arguments?.getStringArrayList(ListFragmentPresenter.PROFILEINFOLIST)
     }
 }

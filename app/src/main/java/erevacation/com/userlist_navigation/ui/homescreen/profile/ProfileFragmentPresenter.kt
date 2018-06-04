@@ -39,7 +39,7 @@ class ProfileFragmentPresenter @Inject constructor(val listUC: ListUC) : Profile
     private fun setUserNameAndImage(name: String, surname: String, image: String, profileInfoList: ArrayList<String>) {
         val fullName: String = "$name $surname"
         binding?.name?.text = fullName
-        binding!!.profileImage.let { Glide.with(binding!!.root.context).load(image).apply(RequestOptions.circleCropTransform()).into(it) }
+        binding?.profileImage?.let { Glide.with(binding!!.root.context).load(image).apply(RequestOptions.circleCropTransform()).into(it) }
         profileAdapter.updateUserDetails(profileInfoList)
     }
 
