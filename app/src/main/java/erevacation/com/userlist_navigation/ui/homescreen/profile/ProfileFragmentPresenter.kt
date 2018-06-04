@@ -18,7 +18,10 @@ class ProfileFragmentPresenter @Inject constructor(val listUC: ListUC) : Profile
         this.view = view as ProfileContract.ProfileView
         this.binding = (this.view as?ProfileFragment)?.binding
         view as ProfileFragment
-        setUserNameAndImage("Proba", "Proba", "Proba", arrayListOf("One","","",""))
+        setUserNameAndImage(view.name ?: ""
+                , view.surname ?: ""
+                , view.imageUrl ?: ""
+                , view.profileListInfo ?: arrayListOf())
         binding?.profileRecyclerView?.bringToFront()
         buildLayout()
 
@@ -36,7 +39,7 @@ class ProfileFragmentPresenter @Inject constructor(val listUC: ListUC) : Profile
     private fun setUserNameAndImage(name: String, surname: String, image: String, profileInfoList: ArrayList<String>) {
         val fullName: String = "$name $surname"
         binding?.name?.text = fullName
-        binding!!.profileImage.let { Glide.with(binding!!.root!!.context).load(image).apply(RequestOptions.circleCropTransform()).into(it) }
+        binding?.profileImage?.let { Glide.with(binding!!.root.context).load(image).apply(RequestOptions.circleCropTransform()).into(it) }
         profileAdapter.updateUserDetails(profileInfoList)
     }
 
@@ -44,4 +47,5 @@ class ProfileFragmentPresenter @Inject constructor(val listUC: ListUC) : Profile
         binding?.profileRecyclerView?.layoutManager = LinearLayoutManager(binding?.root?.context)
         binding?.profileRecyclerView?.adapter = profileAdapter
     }
+
 }
