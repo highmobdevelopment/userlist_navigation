@@ -3,8 +3,10 @@ package erevacation.com.userlist_navigation.ui.homescreen
 import android.app.Activity
 import android.app.FragmentManager
 import android.content.res.Resources
+import android.os.Bundle
 import android.view.MenuItem
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -41,26 +43,8 @@ class HomeActivityPresenter @Inject constructor() : HomeContract.HomePresenter {
     }
 
     override fun buildLayout() {
-        val host: NavHostFragment = fragmentManager
-                .findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
-        val navController = host.navController
-
-        setupBottomNavMenu(navController)
-
-        navController.addOnNavigatedListener { _, destination ->
-            val dest: String = try {
-                binding!!.root.context.resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                Integer.toString(destination.id)
-            }
-        }
+        val host: NavHostFragment = fragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
     }
 
-
-    private fun setupBottomNavMenu(navController: NavController) {
-        binding?.bottomNavView?.let { bottomNavView ->
-            NavigationUI.setupWithNavController(bottomNavView, navController)
-        }
-    }
 
 }
