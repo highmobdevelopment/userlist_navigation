@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:startDestination="@id/listFragment">
 
     <fragment
@@ -10,9 +10,12 @@
         <action
             android:id="@+id/action_listFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <deepLink app:uri="http://highmobdev.com/list" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="erevacation.com.userlist_navigation.ui.homescreen.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment">
+        <deepLink app:uri="http://highmobdev.com/profile/{name}/{surname}" />
+    </fragment>
 </navigation>
