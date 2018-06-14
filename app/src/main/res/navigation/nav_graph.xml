@@ -9,7 +9,9 @@
         android:label="ListFragment">
         <action
             android:id="@+id/action_listFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:enterAnim="@animator/fui_slide_in_right"
+            app:exitAnim="@animator/fui_slide_out_left" />
         <deepLink app:uri="http://highmobdev.com/list" />
     </fragment>
     <fragment
