@@ -9,6 +9,6 @@ interface ListContract {
     }
 
     interface ListPresenter : ViperContract.Presenter {
-        fun openProfileScreen(name: String, surname: String, image: String, profileInfoList: ArrayList<String>, view:View)
+
     }
 }

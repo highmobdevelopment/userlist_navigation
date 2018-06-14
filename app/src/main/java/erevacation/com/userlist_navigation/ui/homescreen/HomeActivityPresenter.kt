@@ -29,7 +29,6 @@ class HomeActivityPresenter @Inject constructor() : HomeContract.HomePresenter {
         this.view = view as HomeContract.HomeView
         this.binding = (this.view as? HomeActivity)?.binding
         fragmentManager = (this.view as HomeActivity).fragmentManager
-        buildLayout()
     }
 
     override fun viewDetach() {
@@ -40,10 +39,6 @@ class HomeActivityPresenter @Inject constructor() : HomeContract.HomePresenter {
     override fun onDestroyed() {
         this.view = null
         this.binding = null
-    }
-
-    override fun buildLayout() {
-        val host: NavHostFragment = fragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
     }
 
 

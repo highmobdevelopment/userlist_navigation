@@ -46,22 +46,6 @@ class ListFragmentPresenter @Inject constructor(val listUC: ListUC) : ListContra
         this.binding = null
     }
 
-    override fun openProfileScreen(name: String, surname: String, image: String, profileInfoList: ArrayList<String>, view: View) {
-        val bundle = Bundle()
-        bundle.putString(NAME, name)
-        bundle.putString(IMAGEURL, image)
-        bundle.putString(SURNAME, surname)
-        bundle.putStringArrayList(PROFILEINFOLIST, profileInfoList)
-        Navigation.createNavigateOnClickListener(R.id.profileFragment, bundle)
-        val options = NavOptions.Builder()
-                .setEnterAnim(R.animator.right_in)
-                .setExitAnim(R.animator.fui_slide_out_left)
-                .setPopEnterAnim(R.animator.fui_slide_in_right)
-                .setPopExitAnim(R.animator.right_out)
-                .build()
-        Navigation.findNavController(view).navigate(R.id.profileFragment, bundle, options)
-    }
-
     private fun buildLayout() {
         binding?.listRecyclerView?.layoutManager = LinearLayoutManager(binding?.root?.context)
         binding?.listRecyclerView?.adapter = listAdapter

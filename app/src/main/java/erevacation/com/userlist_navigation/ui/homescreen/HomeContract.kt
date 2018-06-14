@@ -9,6 +9,6 @@ interface HomeContract {
     }
 
     interface HomePresenter : ViperContract.Presenter {
-        fun buildLayout()
+
     }
 }

@@ -1,8 +1,11 @@
 package erevacation.com.userlist_navigation.ui.homescreen.list
 
+import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import erevacation.com.userlist_navigation.R
 import erevacation.com.userlist_navigation.databinding.ViewHolderListBinding
 import erevacation.com.userlist_navigation.datamodel.ListDM
 
@@ -25,11 +28,13 @@ class ListRecyclerAdapter(val presenter: ListFragmentPresenter)
             this.profileInfoList.add(listInfo[position].contactDetails.phones.home)
             this.profileInfoList.add(listInfo[position].contactDetails.phones.work)
 
-            presenter.openProfileScreen(listInfo[position].name
-                    , listInfo[position].surname
-                    , listInfo[position].image
-                    , profileInfoList
-                    , it)
+            val bundle = Bundle().apply {
+                putString(ListFragmentPresenter.NAME, listInfo[position].name)
+                putString(ListFragmentPresenter.IMAGEURL, listInfo[position].image)
+                putString(ListFragmentPresenter.SURNAME, listInfo[position].surname)
+                putStringArrayList(ListFragmentPresenter.PROFILEINFOLIST, profileInfoList)
+            }
+            Navigation.findNavController(it).navigate(R.id.action_listFragment_to_profileFragment, bundle)
         }
     }
 
